@@ -2,15 +2,13 @@ use std::io;
 use std::io::Write;
 use std::process;
 
-// ARITHMETIC
-fn add() -> i64 {
+fn operands () -> (i64, i64) {
     let mut _num = String::new();
-    println!("a + b = ?");
-
     print!("a: ");
+    io::stdout().flush().expect("Toilet clogged");
     io::stdin().read_line(&mut _num).expect("Failed to read in line");
-    let a: i64 = match _num.trim().parse() { // Input Validation
-        Ok(_num) => _num,
+    let _a: i64 = match _num.trim().parse() { // Input Validation
+        Ok(_a) => _a,
         Err(_) => {
             println!("Please enter a valid number");
             process::exit(1);
@@ -19,20 +17,33 @@ fn add() -> i64 {
 
     _num.clear();
     print!("b: ");
+    io::stdout().flush().expect("Toilet clogged");
     io::stdin().read_line(&mut _num).expect("Failed to read in line");
-    let b: i64 = match _num.trim().parse() { // Input Validation
-        Ok(_num) => _num,
+    let _b: i64 = match _num.trim().parse() { // Input Validation
+        Ok(_b) => _b,
         Err(_) => {
             println!("Please enter a valid number");
             process::exit(1);
         }
     };
-    
-    return a + b;
+    return (_a, _b);
 }
 
-fn subtract() -> i64 {
-    2
+// ARITHMETIC
+fn add(a: i64, b: i64) -> i64 {
+    a + b
+}
+fn subtract(a: i64, b: i64) -> i64 {
+    a - b
+}
+fn multiply(a: i64, b: i64) -> i64 {
+    a * b
+}
+fn divide(a: i64, b: i64) -> i64 {
+    a / b
+}
+fn remainder(a: i64, b: i64) -> i64 {
+    a % b
 }
 
 // MAIN
@@ -58,14 +69,35 @@ fn main() {
         };
 
         match num {
+            // ADD
             1 => {
-                println!("{}", add());
+                println!("\na + b = ?");
+                let (a, b) = operands();
+                println!("{} + {} = {}\n", a, b, add(a, b));
             },
+            
+            // SUBTRACT
             2 => {
-                println!("{}", subtract());
+                println!("\na - b = ?");
+                let (a, b) = operands();
+                println!("{} - {} = {}\n", a, b, subtract(a, b));
             },
+
+            // MULTIPLY
+            3 => {
+                println!("\na * b = ?");
+                let (a, b) = operands();
+                println!("{} * {} = {}\n", a, b, multiply(a, b));
+            }
+
+            // DIVIDE
+            4 => {
+                println!("\na / b = ?");
+                let (a, b) = operands();
+                println!("{} * {} = {} r {}\n", a, b, divide(a, b), remainder(a,b));
+            }
             _ => {
-                println!("NOO!");
+                main();
             },
         }
     }
