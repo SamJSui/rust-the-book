@@ -8,7 +8,7 @@ Following tutorial and projects from "The Rust Programming Language" by Steve Kl
 
 **Personal Projects:**
 - 03. Calculator
-- 04. Reverse String
+- 04. Reversed String's First Word
 
 
 **Guided**
