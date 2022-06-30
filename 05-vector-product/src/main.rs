@@ -6,6 +6,14 @@ struct Vector{
     z: i64
 }
 
+impl Vector {
+    fn fill(&mut self, _nums: &Vec<i64>){
+        self.x = _nums[0];
+        self.y = _nums[1];
+        self.z = _nums[2];
+    }
+}
+
 fn dot(_vec1: &Vector, _vec2: &Vector) {
     let product = (_vec1.x * _vec2.x) + (_vec1.y * _vec2.y) + (_vec1.z * _vec2.z);
     println!("\nDot Product = {}", product);
@@ -37,18 +45,14 @@ fn main() {
     std::io::stdin().read_line(&mut _input).expect("Could not read input");
     let mut _nums: Vec<i64> = _input.trim().split(' ').flat_map(str::parse::<i64>).collect();
 
-    _vec1.x = _nums[0];
-    _vec1.y = _nums[1];
-    _vec1.z = _nums[2];
+    _vec1.fill(&_nums);
 
     _input.clear();
     println!("\n2nd Vector Input: 'd e f' (<d, e, f>)");
     std::io::stdin().read_line(&mut _input).expect("Could not read input");
     let mut _nums: Vec<i64> = _input.trim().split(' ').flat_map(str::parse::<i64>).collect();
 
-    _vec2.x = _nums[0];
-    _vec2.y = _nums[1];
-    _vec2.z = _nums[2];
+    _vec2.fill(&_nums);
 
     dot(&_vec1, &_vec2);
     cross(&_vec1, &_vec2);
