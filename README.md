@@ -7,10 +7,10 @@ Following tutorial and projects from "The Rust Programming Language" by Steve Kl
 ## **Notes**
 
 **Personal Projects:**
-- 03. Calculator
-- 04. Reversed String's First Word
-- 05. Dot/Cross Product
-
+- 03. Calculator (Read Input)
+- 04. Reversed String's First Word (Strings)
+- 05. Dot/Cross Product (Structs)
+- 06. Parts of PC (Modules and Crates)
 
 **Guided**
 - 00. Hello World

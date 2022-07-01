@@ -1,0 +1,1 @@
+C:\Users\iPlai\OneDrive\Rust\rust-the-book\06-parts-of-pc\target\debug\parts-of-pc.exe: C:\Users\iPlai\OneDrive\Rust\rust-the-book\06-parts-of-pc\src\lib.rs C:\Users\iPlai\OneDrive\Rust\rust-the-book\06-parts-of-pc\src\main.rs C:\Users\iPlai\OneDrive\Rust\rust-the-book\06-parts-of-pc\src\pc\case.rs C:\Users\iPlai\OneDrive\Rust\rust-the-book\06-parts-of-pc\src\pc.rs
