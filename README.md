@@ -10,7 +10,9 @@ Following tutorial and projects from "The Rust Programming Language" by Steve Kl
 - 03. Calculator (Read Input)
 - 04. Reversed String's First Word (Strings)
 - 05. Dot/Cross Product (Structs)
-- 06. Parts of PC (Modules and Crates)
+- 06. Pick A Card (Enums and Options)
+- 07. Parts of PC (Modules and Crates)
+- 08. Chinese Translator (Storing Data)
 
 **Guided**
 - 00. Hello World
