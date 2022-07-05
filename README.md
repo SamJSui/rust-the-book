@@ -12,7 +12,7 @@ Following tutorial and projects from "The Rust Programming Language" by Steve Kl
 - 05. Dot/Cross Product (Structs)
 - 06. Pick A Card (Enums and Options)
 - 07. Parts of PC (Modules and Crates)
-- 08. Chinese Translator (Storing Data)
+- 08. Chinese Translator (Storing Data as Vectors, Strings, and HashMaps)
 
 **Guided**
 - 00. Hello World
