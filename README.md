@@ -18,3 +18,4 @@ Following tutorial and projects from "The Rust Programming Language" by Steve Kl
 - 00. Hello World
 - 01. Hello Cargo
 - 02. Guessing Game
+- 09. Don't Panic! (Error Handling and Filestream)
