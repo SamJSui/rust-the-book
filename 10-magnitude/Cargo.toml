@@ -1,5 +1,5 @@
 [package]
-name = "concat"
+name = "magnitude"
 version = "0.1.0"
 edition = "2021"
 
