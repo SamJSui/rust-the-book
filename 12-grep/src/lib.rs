@@ -1,9 +1,10 @@
 use std::error::Error;
-use std::fs;
+use std::{fs, env};
 
 pub struct Config {
     pub query: String,
     pub filename: String,
+    pub ignore_case: bool,
 }
 
 impl Config {
@@ -11,25 +12,33 @@ impl Config {
         if args.len() < 3 {
             return Err("Not enough arguments!");
         }
-        let query = args[1].clone();
-        let filename = args[2].clone();
-        Ok(Config { query, filename })
+        let query: String = args[1].clone();
+        let filename: String = args[2].clone();
+        let ignore_case: bool = env::var("IGNORE_CASE").is_ok();
+        Ok(Config { query, filename, ignore_case })
     }
 }
 
 pub fn run (config: Config) -> Result<(), Box<dyn Error>> {
-    let contents = fs::read_to_string(config.filename)?;
+    let contents: String = fs::read_to_string(config.filename)?;
     println!("\n-----");
     println!("With text:\n{}", contents);
     println!("-----\n");
-    for line in search(&config.query, &contents) {
+    let results: Vec<&str> = if config.ignore_case {
+        search_case_insensitive(&config.query, &contents)
+    } else {
+        search(&config.query, &contents)
+    };
+
+
+    for line in results {
         println!("{}", line);
     }
     Ok(())
 }
 
 pub fn search<'a> (query: &str, contents: &'a str) -> Vec<&'a str> {
-    let mut results: Vec<&str>   = Vec::new();
+    let mut results: Vec<&str> = Vec::new();
 
     for line in contents.lines() {
         if line.contains(query) {
