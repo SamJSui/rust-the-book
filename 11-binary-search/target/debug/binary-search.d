@@ -1,1 +1,0 @@
-C:\Users\samue\OneDrive\Rust\rust-the-book\11-binary-search\target\debug\binary-search.exe: C:\Users\samue\OneDrive\Rust\rust-the-book\11-binary-search\src\lib.rs C:\Users\samue\OneDrive\Rust\rust-the-book\11-binary-search\src\main.rs
