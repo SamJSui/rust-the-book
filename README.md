@@ -13,6 +13,8 @@ Following tutorial and projects from "The Rust Programming Language" by Steve Kl
 - 06. Pick A Card (Enums and Options)
 - 07. Parts of PC (Modules and Crates)
 - 08. Chinese Translator (Storing Data as Vectors, Strings, and HashMaps)
+- 11. Binary Search (Cargo Tests)
+-
 
 **Guided**
 - 00. Hello World
